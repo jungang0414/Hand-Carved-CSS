@@ -1,0 +1,77 @@
+* {
+    /*內邊距*/
+    padding: 0;
+    /*外邊距*/
+    margin: 0;
+    background-color: #ffad77;
+}
+
+body {
+    /* 絕對定位 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cup-top {
+    /* 相對定位 */
+    position: relative;
+    width: 120px;
+    /* 設定右邊框為透明 */
+    border-right: 15px solid transparent;
+    /* 設定左邊框為透明 */
+    border-left: 15px solid transparent;
+    /* 底部邊框*/
+    border-bottom: 40px solid #3a3a3a;
+    /* 將光標更改為指針 */
+    cursor: pointer;
+    /* 轉換的基準點設定在元素的左下角 */
+    transform-origin: left bottom;
+    /* 元素轉換時的動畫時間 */
+    transition: .5s;
+}
+
+.cup-top:hover {
+    /* 當滑鼠停留在 .cup-top元素上時逆時針旋轉20度 */
+    transform: rotate(-20deg);
+}
+
+.cup-top::after {
+    /* 設定為空字串，代表不會有文字內容被添加 */
+    content: "";
+    /* 絕對定位*/
+    position: absolute;
+    background-color: #000000;
+    bottom: -40px;
+    left: -30px;
+    width: 180px;
+    height: 15px;
+    /* 邊框圓角 */
+    border-radius: 5px;
+}
+
+.cup-body {
+    /* 相對定位*/
+    position: relative;
+    width: 120px;
+    /* 設定右邊框為透明 */
+    border-right: 15px solid transparent;
+    /* 設定左邊框為透明 */
+    border-left: 15px solid transparent;
+    border-top: 200px solid #fff;
+    z-index: -1;
+}
+
+.cup-body::before {
+    /* 設定為空字串, 不添加文字內容*/
+    content: "";
+    /* 絕對定位 */
+    position: absolute;
+    bottom: 60px;
+    left: -16px;
+    width: 136px;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-top: 70px solid #939200;
+}
