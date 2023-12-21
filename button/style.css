@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /* 絕對定位 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 使其顯示在畫面中央 */
+    transform: translate(-50%, -50%);
+}
+
+button {
+    /* 相對定位 */
+    position: relative;
+    width: 240px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+    /* 轉換為大寫 */
+    text-transform: uppercase;
+    color: #2a00b5;
+    background-color: transparent;
+    border: 3px solid #2a00b5;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    /* 隱藏超過邊建的部分 */
+    overflow: hidden;
+    transition: .5s;
+}
+
+/* 設定before, after的共同屬性 */
+button::before,
+button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 120%;
+    height: 100%;
+    transform: skewX(-45deg);
+    z-index: -1;
+}
+
+button::before {
+    background-color: #2a00b5;
+    transition: .5s;
+}
+
+button::after {
+    background-color: rgba(255, 255, 255, .2);
+    transition: .5s;
+    transition-delay: .5s;
+}
+
+button:hover {
+    color: #fff;
+}
+
+button:hover::before {
+    left: -10%;
+}
+
+button:hover::after {
+    left: -70%;
+}
