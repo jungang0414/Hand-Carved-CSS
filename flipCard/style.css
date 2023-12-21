@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #292929;
+}
+
+.card {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .5);
+    /* 保持3D轉換樣式 */
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* 隱藏翻轉時的背面 */
+    backface-visibility: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.card-front {
+    /* 設置堆疊順序 讓front高於back*/
+    z-index: 2;
+}
+
+/* 事先將背面圖片以Y軸翻轉180度*/
+.card-back {
+    transform: rotateY(180deg);
+    /* 設置堆疊順序 */
+    z-index: 1;
+}
+
+.card:hover {
+    /* 當滑鼠懸停在card時 以Y軸翻轉180度 */
+    transform: rotateY(180deg);
+}
