@@ -1,0 +1,46 @@
+body {
+    background: #29df50;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.d-flex {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg) skew(30deg, 0);
+}
+
+h2 {
+    position: relative;
+    margin: 0 20px;
+    color: #000;
+    font-size: 48px;
+    text-align: justify;
+    transform-origin: bottom;
+    transform: skew(-50deg);
+    text-shadow: -1px -1px 0 #a5a4a4, -2px -2px 0 #a5a4a4 -3px -3px 0 #a5a4a4;
+}
+
+.front-shadow::before,
+.back-shadow::before {
+    content: "SHADOW";
+    position: absolute;
+    color: rgba(0, 0, 0, .1);
+    text-align: justify;
+    transform-origin: bottom;
+    text-shadow: none;
+    top: -20px;
+    left: -12px;
+}
+
+.front-shadow::before {
+    transform: skew(50deg) rotateX(180deg);
+}
+
+.back-shadow::before {
+    transform: skew(50deg) rotateX(0deg) translateY(17px);
+    z-index: -1;
+}
