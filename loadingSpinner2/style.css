@@ -11,12 +11,14 @@ body {
     background-color: #001d51;
 }
 
+/*設置彈性盒子*/
 .d-flex {
-    /*設置彈性盒子*/
     display: flex;
 }
 
+/*設定類別樣式*/
 .loading-spinner {
+    /* 上下邊距設為0, 左右邊距設為10像素 */
     margin: 0 10px;
 }
 
@@ -31,11 +33,14 @@ body {
     height: 14px;
     background-color: #fff;
     border-radius: 50%;
+    /* 動畫的時間函數 */
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
+/* 設定不同div元素的樣式及動畫效果 */
 .loading-spinner1 div:nth-child(1) {
     left: 0;
+    /* showCircle動畫效果 持續時間.5s 無限循環*/
     animation: showCircle .5s infinite;
 }
 
@@ -59,31 +64,44 @@ body {
     animation: hideCircle .5s infinite;
 }
 
+/* 關鍵影格的設定 */
+/* 定義名為showCircle的動畫效果 */
 @keyframes showCircle {
+
+    /* 當動畫開始時 元素的縮放比例設置為 0 (完全隱藏) */
     0% {
         transform: scale(0);
     }
 
+    /* 當動畫結束時 元素的縮放比例設置為 100 (完全顯示)*/
     100% {
         transform: scale(1);
     }
 }
 
+/* 定義名為moveCircle的動畫效果 */
 @keyframes moveCircle {
+
+    /* 動畫開始時 元素在X軸方向(水平方向) 不移動*/
     0% {
         transform: translateX(0);
     }
 
+    /* 動畫結束時 元素在X軸方向(水平方向) 移動24像素*/
     100% {
         transform: translateX(24px);
     }
 }
 
+/* 定義名為hideCircle的動畫效果*/
 @keyframes hideCircle {
+
+    /* 動畫開始時 元素的縮放比例設置為 1 */
     0% {
         transform: scale(1);
     }
 
+    /* 動畫結束時 元素的縮放比例設置為 0 */
     100% {
         transform: scale(0);
     }
