@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #001d51;
+}
+
+.d-flex {
+    /*設置彈性盒子*/
+    display: flex;
+}
+
+.loading-spinner {
+    margin: 0 10px;
+}
+
+.loading-spinner1 {
+    width: 86px;
+}
+
+/* loading-spinner1類別其子元素的樣式設定 */
+.loading-spinner1 div {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.loading-spinner1 div:nth-child(1) {
+    left: 0;
+    animation: showCircle .5s infinite;
+}
+
+.loading-spinner1 div:nth-child(2) {
+    left: 0;
+    animation: moveCircle .5s infinite;
+}
+
+.loading-spinner1 div:nth-child(3) {
+    left: 24px;
+    animation: moveCircle .5s infinite;
+}
+
+.loading-spinner1 div:nth-child(4) {
+    left: 48px;
+    animation: moveCircle .5s infinite;
+}
+
+.loading-spinner1 div:nth-child(5) {
+    left: 72px;
+    animation: hideCircle .5s infinite;
+}
+
+@keyframes showCircle {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes moveCircle {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(24px);
+    }
+}
+
+@keyframes hideCircle {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+.loading-spinner2 {
+    display: flex;
+    width: 120px;
+    height: 30px;
+}
+
+.loading-spinner2 div {
+    width: 10px;
+    background-color: #fff;
+    margin: 0 5px;
+    animation: loading2 1s infinite linear;
+}
+
+.loading-spinner2 div:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.loading-spinner2 div:nth-child(3) {
+    animation-delay: .4s;
+}
+
+.loading-spinner2 div:nth-child(4) {
+    animation-delay: .6s;
+}
+
+.loading-spinner2 div:nth-child(5) {
+    animation-delay: .8s;
+}
+
+
+@keyframes loading2 {
+
+    0%,
+    30%,
+    70% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(1.6);
+    }
+}
